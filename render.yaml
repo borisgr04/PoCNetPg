@@ -1,0 +1,14 @@
+version: 1
+services:
+  - type: web
+    name: todo-api
+    env: docker
+    plan: starter
+    branch: main
+    dockerfilePath: ToDoApi/Dockerfile
+    buildCommand: null
+    startCommand: null
+    envVars:
+      - key: ConnectionStrings__DefaultConnection
+        value: "${CONNECTION_STRING}"
+    healthCheckPath: /
